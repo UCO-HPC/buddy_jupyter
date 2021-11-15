@@ -1,0 +1,48 @@
+---
+cluster: "buddy"
+form:
+  - jupyter_type
+  - modules
+  - extra_jupyter_args 
+  - buddy_queue
+  - buddy_num_hours
+  - buddy_num_cores
+
+attributes:
+  jupyter_type:
+    widget: select
+    label: "Jupyter Session Type"
+    help: "Choose between Jupyter Notebook and Jupyter Lab"
+    options:
+      - ["Jupyter Notebook", "jupyter notebook"]
+      - ["Jupyter Lab", "jupyter-lab"]
+  modules: "JupyterLab/2.2.8-GCCcore-10.2.0 ipyparallel/6.3.0-foss-2020b-Python-3.8.6"
+  extra_jupyter_args: ""
+  buddy_queue:
+    label: Queue
+    help: "Queue your job will run on"
+    widget: select
+    options:
+      - [ "General", "general" ]
+      - [ "High Mem", "high-mem" ]
+##      - [ "GPU", "gpu"]
+    value: "General"
+  buddy_num_hours:
+    widget: number_field
+    label: "Number of hours"
+    required: true
+    help: "Set the length of time for this job (1-48)"
+    min: 1
+    max: 48
+    step: 1
+    value: 2
+  buddy_num_cores:
+    widget: number_field
+    label: "Number of cores"
+    required: true
+    help: "Set the number of cores for this job (1-20)"
+    min: 1
+    max: 20
+    step: 1
+    value: 2
+    
