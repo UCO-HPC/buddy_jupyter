@@ -14,7 +14,9 @@ cd "${HOME}"
 # Purge the module environment to avoid conflicts
 module purge
 
-# Load the require modules
+module load <%= context.version %>
+
+# Load the requested modules
 module load <%= context.modules %>
 
 # Load additional modules
