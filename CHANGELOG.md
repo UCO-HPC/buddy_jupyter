@@ -4,6 +4,9 @@ Changes to this project that result in an increase of the major and or minor rev
 ## [Unreleased] - Unknown
 
 ## [v2.0.0] - 2021-12-06
+### Added
+- Version selection
+- Option to load additional modules
 
 ## [v1.0.0] - 2021-11-11
 ### Added
