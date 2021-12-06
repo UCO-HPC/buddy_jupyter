@@ -2,6 +2,7 @@
 cluster: "buddy"
 form:
   - jupyter_type
+  - version
   - modules
   - extra_jupyter_args 
   - buddy_queue
@@ -16,7 +17,19 @@ attributes:
     options:
       - ["Jupyter Notebook", "jupyter notebook"]
       - ["Jupyter Lab", "jupyter-lab"]
-  modules: "JupyterLab/2.2.8-GCCcore-10.2.0 ipyparallel/6.3.0-foss-2020b-Python-3.8.6"
+  version: 
+    widget: select
+    label: "Jupyter version"
+    help: "This defines the version of Jupyter you want to load"
+    options:
+      - [ "Jupyter 1.2.5 (Python 3.7.4/FOSS 2019b/GCC 8.3.0)", "JupyterLab/1.2.5-foss-2019b-Python-3.7.4" ]
+      - [ "Jupyter 2.2.8+IPyParallel 6.3.0 (Python 3.8.6/FOSS 2020b/GCC 10.2.0", "JupyterLab/2.2.8-GCCcore-10.2.0 ipyparallel/6.3.0-foss-2020b-Python-3.8.6" ]
+      - [ "Jupyter 3.0.16 (Python 3.9.5/FOSS 2021a/GCC 10.3.0)", "JupyterLab/3.0.16-GCCcore-10.3.0" ]
+  modules:
+    widget: text_field
+    label: Additional modules
+    help: "Additional modules you wish to load seperated by spaces. Please be sure to match the FOSS, GCC, and or Python versions listed with your selected Jupyter version."
+    value: ""
   extra_jupyter_args: ""
   buddy_queue:
     label: Queue
@@ -25,7 +38,7 @@ attributes:
     options:
       - [ "General", "general" ]
       - [ "High Mem", "high-mem" ]
-##      - [ "GPU", "gpu"]
+      - [ "GPU", "gpu"]
     value: "General"
   buddy_num_hours:
     widget: number_field
