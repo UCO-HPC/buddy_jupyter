@@ -3,7 +3,7 @@ Changes to this project that result in an increase of the major and or minor rev
 
 ## [Unreleased] - Unknown
 
-## [v3.0.0] 2022-02-23
+## [v3.0.0] 2022-03-28
 ### Added
 - Users can user a custom JupyterLab
 - Javascript to dynmically build form based off user selection
