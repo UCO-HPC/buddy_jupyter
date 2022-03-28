@@ -1,14 +1,9 @@
-// Set the version as a global variable
-const version = $('#batch_connect_session_context_version');
+const checkbox_advanced = $('#batch_connect_session_context_advanced');
+const dropdown_version = $('#batch_connect_session_context_version');
+const textbox_modules = $('#batch_connect_session_context_modules');
+const textbox_commands = $('#batch_connect_session_context_commands');
 
-/**
- * Toggle the visibility of a form group
- *
- * @param      {string}    form_id  The form identifier
- * @param      {boolean}   show     Whether to show or hide
- */
-function toggle_visibility_of_form_group(form_id, show) {
-  let form_element = $(form_id);
+function set_visibility_of_form_group(form_element, show) {
   let parent = form_element.parent();
 
   // kick out if you didn't find what you're looking for
@@ -19,28 +14,21 @@ function toggle_visibility_of_form_group(form_id, show) {
   if(show) {
     parent.show();
   } else {
-    form_element.val('');
     parent.hide();
   }
 }
 
-/**
- * Sets the change handler for the cluster select.
- */
-function set_version_change_handler() {
-  let version_input = $('#batch_connect_session_context_version');
-  version_input.change((event) => version_change_handler(event));
+function version_change_handler(event){ 
+  set_visibility_of_form_group(textbox_commands, dropdown_version.val() === "custom" && checkbox_advanced.get(0).checked);
+  set_visibility_of_form_group(textbox_modules, dropdown_version.val() !== "custom" && checkbox_advanced.get(0).checked);
 }
 
-function version_change_handler(event) {
-  console.log("Current selected version is:", version);
-//  console.log(Object.getOwnPropertyNames(version));
-  console.log(version.parent());
-//  console.log("Help value is: ", $('#batch_connect_session_context_version option:custom').val());
-//  toggle_options("batch_connect_session_context_modules");
-//  toggle_options("batch_connect_session_context_commands");
-//  fix_num_cores(event);
-//  toggle_email_on_started();
+function checkbox_advanced_change_handler(event) {
+  set_visibility_of_form_group(dropdown_version, checkbox_advanced.get(0).checked);
+  version_change_handler(event);
 }
 
-set_version_change_handler();
+dropdown_version.change((event) => version_change_handler(event));
+checkbox_advanced.change((event) => checkbox_advanced_change_handler(event));
+
+checkbox_advanced_change_handler(null);

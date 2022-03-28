@@ -52,22 +52,17 @@ attributes:
   version: 
     widget: select
     label: "Jupyter version"
-    help: 
-      - [ "Help 1" ]
-      - [ "This defines the version of Jupyter you want to load" ]
-      - [ "Help 3" ]
-      - [ "Help 4" ]
+    help: "This defines the version of Jupyter you want to load"
     options:
       - [ "Jupyter 1.2.5 (Python 3.7.4/FOSS 2019b/GCC 8.3.0)", "JupyterLab/1.2.5-foss-2019b-Python-3.7.4" ]
       - [ "Jupyter 2.2.8+IPyParallel 6.3.0 (Python 3.8.6/FOSS 2020b/GCC 10.2.0", "JupyterLab/2.2.8-GCCcore-10.2.0 ipyparallel/6.3.0-foss-2020b-Python-3.8.6" ]
       - [ "Jupyter 3.0.16 (Python 3.9.5/FOSS 2021a/GCC 10.3.0)", "JupyterLab/3.0.16-GCCcore-10.3.0" ]
       - [ "Custom (User supplied Jupyter)", "custom" ]
-    meta_foo: "empty"
   modules:
     widget: text_field
     label: Additional modules
     help: "Additional modules you wish to load seperated by spaces. Please be sure to match the FOSS, GCC, and or Python versions listed with your selected Jupyter version."
-    value: ""
+    value: "TensorFlow/2.6.0-foss-2021a"
   commands:
     lable: Launch Commands
     widget: text_area
