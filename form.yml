@@ -67,5 +67,5 @@ attributes:
     lable: Launch Commands
     widget: text_area
     help: "Place commands here to load in a custom version of Jupyter. Please note that OnDemand will handle the actual launching of Jupyter."
-    value: "module load Anaconda3/2021.05\nconda activate myenv"
+    value: "source ~/.bashrc\nmodule load Anaconda3/2021.05\nconda activate myenv"
 

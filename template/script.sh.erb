@@ -13,7 +13,7 @@ cd "${HOME}"
 # Purge the environment to avoid conflicts
 module purge
 
-<%- if context.advanced == 1 -%>
+<%- if context.advanced == "1" -%>
 <%- unless context.version == "custom" -%>
 # Load requested version
 module load <%= context.version %>
@@ -29,7 +29,7 @@ module list
 
 <%- if context.version == "custom" -%>
 # Execute user given commands
-<%= context.commands %>
+<%= context.commands.gsub(/\r/,"\n") %>
 <%- end -%>
 
 <%- else -%>
