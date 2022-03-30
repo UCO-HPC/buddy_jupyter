@@ -5,6 +5,7 @@ form:
   - jupyter_type
   - buddy_num_hours
   - buddy_num_cores
+  - dsmodules
   - advanced
   - version
   - modules
@@ -38,6 +39,10 @@ attributes:
     max: 20
     step: 1
     value: 2
+  dsmodules:
+    widget: check_box
+    label: Enable data science modules
+    value: false
   advanced:
     widget: check_box
     label: View advanced options

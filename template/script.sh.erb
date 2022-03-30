@@ -13,18 +13,22 @@ cd "${HOME}"
 # Purge the environment to avoid conflicts
 module purge
 
-<%- if context.advanced == "1" -%>
-<%- unless context.version == "custom" -%>
-# Load requested version
-module load <%= context.version %>
+<%- if context.dsmodules == "1" -%>
+module load 
 <%- end -%>
 
+<%- if context.advanced == "1" -%>
 <%- unless context.modules.blank? || context.version == "custom"-%>
 # Load the requested modules
 module load <%= context.modules %>
 
 # List loaded modules
 module list
+<%- end -%>
+
+<%- unless context.version == "custom" -%>
+# Load requested version
+MODULE=<%= context.version %>
 <%- end -%>
 
 <%- if context.version == "custom" -%>
@@ -34,8 +38,10 @@ module list
 
 <%- else -%>
 # Load default JupyterLab
-module load JupyterLab/3.0.16-GCCcore-10.3.0
+MODULE=JupyterLab/3.0.16-GCCcore-10.3.0
 <%- end -%>
+
+module load $MODULE
 
 # Benchmark info
 echo "TIMING - Starting jupyter at: $(date)"
