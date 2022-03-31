@@ -2,6 +2,17 @@
 Changes to this project that result in an increase of the major and or minor revision will be added here. Please follow the format outlined in [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and keep with the syntax associated with [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased] - Unknown
+### Added
+- Optional AI module collection
+- Option on form and logic to load said collections
+- Pandas to data science module collection
+
+## [v3.1.0] 2022-03-31
+### Added
+- Optional data science module collection
+- Option on form and logic to load said collections
+### Removed
+- iPyParallel module loading with selection of 2.2.8
 
 ## [v3.0.0] 2022-03-28
 ### Added
@@ -17,7 +28,8 @@ Changes to this project that result in an increase of the major and or minor rev
 ### Added
 - Initial commit of current code
 
-[Unreleased]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.0.0...devel
+[Unreleased]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.0...devel
+[v3.1.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v2.0.0...v3.0.0
 [v3.0.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v2.0.0...v3.0.0
 [v2.0.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v1.0.0...v2.0.0
 [v1.0.0]: https://github.com/UCO-HPC/buddy_jupyter/releases/tag/v1.0.0
