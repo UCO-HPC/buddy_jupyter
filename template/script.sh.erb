@@ -14,27 +14,49 @@ cd "${HOME}"
 module purge
 
 <%- if context.advanced == "1" -%>
-<%- unless context.version == "custom" -%>
-# Load requested version
-module load <%= context.version %>
+
+  <%- case context.version  when "1.2.5" %>
+      JUPYTER_VERSION=JupyterLab/1.2.5-2019b-Python-3.7.4
+      TOOLKIT_VERSION=2019b-Python-3.7.4
+     
+    <% when "2.2.8" %>
+      JUPYTER_VERSION=JupyterLab/2.2.8-GCCcore-10.2.0
+      TOOLKIT_VERSION=2020b-Python-3.8.6
+
+    <% when "3.0.16" %>
+      JUPYTER_VERSION=JupyterLab/3.0.16-GCCcore-10.3.0
+      TOOLKIT_VERSION=2021a-Python-3.9.5
+
+    <% when "custom" %>
+      JUPYTER_VERSION=custom
+      TOOLKIT_VERSION=ignore
+   
+  <%- end -%>
+
+  <%- else -%>
+
+    JUPYTER_VERSION=JupyterLab/3.0.16-GCCcore-10.3.0
+    TOOLKIT_VERSION=2021a-Python-3.9.5
+
 <%- end -%>
 
-<%- unless context.modules.blank? || context.version == "custom"-%>
-# Load the requested modules
-module load <%= context.modules %>
+<%- if $JUPYTER_VERSION != "custom" -%>
 
-# List loaded modules
-module list
-<%- end -%>
+  module load $JUPYTER_VERSION
+  
+  <%- if context.dstoolkit == "1" -%>
+    module load Python-Data-Science/$TOOLKIT_VERSION
+    
+  <%- end -%>
 
-<%- if context.version == "custom" -%>
-# Execute user given commands
-<%= context.commands.gsub(/\r/,"\n") %>
-<%- end -%>
+  <%- if context.advanced == "1" && context.modules.blank? == false -%>
+    module load <%= context.modules %>
 
-<%- else -%>
-# Load default JupyterLab
-module load JupyterLab/3.0.16-GCCcore-10.3.0
+  <%- end -%>
+
+  <%- else -%>
+    <%= context.commands.gsub(/\r/,"\n") %>
+
 <%- end -%>
 
 # Benchmark info
