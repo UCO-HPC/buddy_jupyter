@@ -6,6 +6,7 @@ form:
   - buddy_num_hours
   - buddy_num_cores
   - dstoolkit
+  - aitoolkit
   - advanced
   - version
   - modules
@@ -42,6 +43,10 @@ attributes:
   dstoolkit:
     widget: check_box
     label: Data Science Toolkit
+    value: false
+  aitoolkit:
+    widget: check_box
+    label: AI Toolkit
     value: false
   advanced:
     widget: check_box

@@ -48,6 +48,11 @@ module purge
     module load Python-Data-Science/$TOOLKIT_VERSION
     
   <%- end -%>
+  
+  <%- if context.aitoolkit == "1" -%>
+    module load Python-AI/$TOOLKIT_VERSION
+    
+  <%- end -%>
 
   <%- if context.advanced == "1" && context.modules.blank? == false -%>
     module load <%= context.modules %>
