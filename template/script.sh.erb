@@ -40,7 +40,7 @@ module purge
 
 <%- end -%>
 
-<%- if $JUPYTER_VERSION != "custom" -%>
+<%- if context.version != "custom" -%>
 
   module load $JUPYTER_VERSION
   
