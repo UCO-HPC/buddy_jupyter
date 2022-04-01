@@ -6,6 +6,7 @@ form:
   - buddy_num_hours
   - buddy_num_cores
   - dstoolkit
+#  - aitoolkit
   - advanced
   - version
   - modules
@@ -43,6 +44,10 @@ attributes:
     widget: check_box
     label: Data Science Toolkit
     value: false
+  aitoolkit:
+    widget: check_box
+    label: AI Toolkit
+    value: false
   advanced:
     widget: check_box
     label: View advanced options
@@ -72,5 +77,5 @@ attributes:
     lable: Launch Commands
     widget: text_area
     help: "Place commands here to load in a custom version of Jupyter. Please note that OnDemand will handle the actual launching of Jupyter and any checked toolkits will be ignored."
-    value: "source ~/.bashrc\nmodule load Anaconda3/2021.05\nconda activate myenv"
+    value: "module load Anaconda3/2021.05\nsource ~/.bashrc\nconda activate myenv"
 

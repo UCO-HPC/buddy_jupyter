@@ -40,12 +40,17 @@ module purge
 
 <%- end -%>
 
-<%- if $JUPYTER_VERSION != "custom" -%>
+<%- if context.version != "custom" -%>
 
   module load $JUPYTER_VERSION
   
   <%- if context.dstoolkit == "1" -%>
     module load Python-Data-Science/$TOOLKIT_VERSION
+    
+  <%- end -%>
+  
+  <%- if context.aitoolkit == "1" -%>
+    module load Python-AI/$TOOLKIT_VERSION
     
   <%- end -%>
 
