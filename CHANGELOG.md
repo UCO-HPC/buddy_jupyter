@@ -9,7 +9,7 @@ Changes to this project that result in an increase of the major and or minor rev
 
 ## [v3.1.2] 2022-04-01
 ### Fixed
-- Undifened method error for AI toolkit
+- Undefined method error for AI toolkit
 
 ## [v3.1.1] 2022-04-01
 ### Fixed
