@@ -44,10 +44,10 @@ attributes:
     widget: check_box
     label: Data Science Toolkit
     value: false
-  aitoolkit:
-    widget: check_box
-    label: AI Toolkit
-    value: false
+#  aitoolkit:
+#    widget: check_box
+#    label: AI Toolkit
+#    value: false
   advanced:
     widget: check_box
     label: View advanced options
