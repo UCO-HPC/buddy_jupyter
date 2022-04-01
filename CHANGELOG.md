@@ -7,6 +7,11 @@ Changes to this project that result in an increase of the major and or minor rev
 - Option on form and logic to load said collections
 - Pandas to data science module collection
 
+## [v3.1.1] 2022-04-01
+### Fixed
+- Custom version does not load correctly
+- Custom version default command order
+
 ## [v3.1.0] 2022-03-31
 ### Added
 - Optional data science module collection
@@ -28,8 +33,9 @@ Changes to this project that result in an increase of the major and or minor rev
 ### Added
 - Initial commit of current code
 
-[Unreleased]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.0...devel
-[v3.1.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v2.0.0...v3.0.0
+[Unreleased]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.1...devel
+[v3.1.1]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.0...v3.1.1
+[v3.1.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.0.0...v3.1.0
 [v3.0.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v2.0.0...v3.0.0
 [v2.0.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v1.0.0...v2.0.0
 [v1.0.0]: https://github.com/UCO-HPC/buddy_jupyter/releases/tag/v1.0.0
