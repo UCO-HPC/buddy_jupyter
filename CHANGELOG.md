@@ -7,6 +7,10 @@ Changes to this project that result in an increase of the major and or minor rev
 - Option on form and logic to load said collections
 - Pandas to data science module collection
 
+## [v3.1.2] 2022-04-01
+### Fixed
+- Undifened method error for AI toolkit
+
 ## [v3.1.1] 2022-04-01
 ### Fixed
 - Custom version does not load correctly
@@ -33,7 +37,8 @@ Changes to this project that result in an increase of the major and or minor rev
 ### Added
 - Initial commit of current code
 
-[Unreleased]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.1...devel
+[Unreleased]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.2...devel
+[v3.1.2]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.1...v3.1.2
 [v3.1.1]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.1.0...v3.1.1
 [v3.1.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v3.0.0...v3.1.0
 [v3.0.0]: https://github.com/UCO-HPC/buddy_jupyter/compare/v2.0.0...v3.0.0
