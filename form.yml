@@ -64,9 +64,9 @@ attributes:
     label: "Jupyter version"
     help: "This defines the version of Jupyter you want to load"
     options:
-      - [ "Jupyter 1.2.5  (Python 3.7.4/FOSS 2019b/GCC 8.3.0)", "1.2.5" ]
       - [ "Jupyter 2.2.8  (Python 3.8.6/FOSS 2020b/GCC 10.2.0", "2.2.8" ]
       - [ "Jupyter 3.0.16 (Python 3.9.5/FOSS 2021a/GCC 10.3.0)", "3.0.16" ]
+      - [ "Jupyter 3.5.0 (Python 3.10.4/FOSS 2022a/GCC 11.3.0)", "3.5.0" ]
       - [ "Custom (User supplied Jupyter)", "custom" ]
   modules:
     widget: text_field
