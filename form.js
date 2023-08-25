@@ -7,7 +7,7 @@ function set_visibility_of_form_group(form_element, show) {
   let parent = form_element.parent();
 
   // kick out if you didn't find what you're looking for
-  if(parent.size() <= 0) {
+  if(parent.length <= 0) {
     return;
   }
 
