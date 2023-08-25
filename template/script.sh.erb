@@ -15,17 +15,20 @@ module purge
 
 <%- if context.advanced == "1" -%>
 
-  <%- case context.version  when "1.2.5" %>
-      JUPYTER_VERSION=JupyterLab/1.2.5-2019b-Python-3.7.4
-      TOOLKIT_VERSION=2019b-Python-3.7.4
-     
-    <% when "2.2.8" %>
+  <%- case context.version  when "2.2.8" %>
       JUPYTER_VERSION=JupyterLab/2.2.8-GCCcore-10.2.0
       TOOLKIT_VERSION=2020b-Python-3.8.6
+      KERNEL_PACK_VERSION=NONE
 
     <% when "3.0.16" %>
       JUPYTER_VERSION=JupyterLab/3.0.16-GCCcore-10.3.0
       TOOLKIT_VERSION=2021a-Python-3.9.5
+      KERNEL_PACK_VERSION=NONE
+
+    <% when "3.5.0" %>
+      JUPYTER_VERSION=JupyterLab/3.5.0-GCCcore-11.3.0
+      TOOLKIT_VERSION=2022a-Python-3.10.4
+      KERNEL_PACK_VERSION=1.0-GCCcore-11.3.0
 
     <% when "custom" %>
       JUPYTER_VERSION=custom
@@ -35,8 +38,9 @@ module purge
 
   <%- else -%>
 
-    JUPYTER_VERSION=JupyterLab/3.0.16-GCCcore-10.3.0
-    TOOLKIT_VERSION=2021a-Python-3.9.5
+    JUPYTER_VERSION=JupyterLab/3.5.0-GCCcore-11.3.0
+    TOOLKIT_VERSION=2022a-Python-3.10.4 
+    KERNEL_PACK_VERSION=1.0-GCCcore-11.3.0
 
 <%- end -%>
 
@@ -45,8 +49,11 @@ module purge
   module load $JUPYTER_VERSION
   
   <%- if context.dstoolkit == "1" -%>
-    module load Python-Data-Science/$TOOLKIT_VERSION
-    
+    module load Python-Data-Science/$TOOLKIT_VERSION    
+  <%- end -%>
+
+  <%- if $KERNEL_PACK_VERSION != "" -%>
+    module load Jupyter-Kernel-Pack/$KERNEL_PACK_VERSION
   <%- end -%>
   
 ##  < if context.aitoolkit == "1" -%>
