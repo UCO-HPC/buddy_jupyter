@@ -30,6 +30,11 @@ module purge
       TOOLKIT_VERSION=2022a-Python-3.10.4
       KERNEL_PACK_VERSION=1.1-GCCcore-11.3.0
 
+    <% when "4.2.0" %>
+      JUPYTER_VERSION=JupyterLab/4.2.0-GCCcore-13.2.0
+      TOOLKIT_VERSION=NONE
+      KERNEL_PACK_VERSION=NONE
+
     <% when "custom" %>
       JUPYTER_VERSION=custom
       TOOLKIT_VERSION=ignore
