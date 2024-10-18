@@ -43,9 +43,9 @@ module purge
 
   <%- else -%>
 
-    JUPYTER_VERSION=JupyterLab/3.5.0-GCCcore-11.3.0
-    TOOLKIT_VERSION=2022a-Python-3.10.4 
-    KERNEL_PACK_VERSION=1.0-GCCcore-11.3.0
+      JUPYTER_VERSION=JupyterLab/4.2.0-GCCcore-13.2.0
+      TOOLKIT_VERSION=NONE
+      KERNEL_PACK_VERSION=NONE
 
 <%- end -%>
 
@@ -81,4 +81,4 @@ echo "TIMING - Starting jupyter at: $(date)"
 
 # Launch the Jupyter server type selected by the user
 set -x
-<%= context.jupyter_type %> --config="${CONFIG_FILE}"
+jupyter-lab --config="${CONFIG_FILE}"
