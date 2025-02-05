@@ -1,5 +1,5 @@
 ---
-cluster: "jenny"
+cluster: "buddy-2.5"
 form:
   - buddy_queue
 #  - jupyter_type
